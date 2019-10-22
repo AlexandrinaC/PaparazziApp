@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="INFO">
+        <menu>
+            <item
+                android:orderInCategory="0"
+                android:title="Cŕetidos" />
+
+        </menu>
+    </item>
+
+    <item android:title="ACCIONES">
+        <menu>
+            <item
+                android:orderInCategory="16"
+                android:title="Tomar foto RAM"
+                android:icon="@drawable/ic_tomar_foto_ram"/>
+            <item
+                android:orderInCategory="17"
+                android:title="Tomar foto disco duro"
+                android:icon="@drawable/ic_tomar_foto_disco"/>
+            <item
+                android:orderInCategory="18"
+                android:title="Seleccionar foto"
+                android:icon="@drawable/ic_seleccionar_foto"/>
+
+        </menu>
+    </item>
+
+</menu>
