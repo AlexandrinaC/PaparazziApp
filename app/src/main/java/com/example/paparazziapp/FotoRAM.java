@@ -7,12 +7,16 @@ import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.widget.ImageView;
+
+import java.util.List;
 
 public class FotoRAM extends AppCompatActivity {
 
@@ -38,6 +42,14 @@ public class FotoRAM extends AppCompatActivity {
 
             //Si por lo menos hay una app que toma fotos, comienza la funcion de tomar foto.
             startActivityForResult(tomar_foto_intent, 150);
+        }
+
+        //Un intent para hacer una lista de las apps que pueden realizar esta accion.
+        List<ResolveInfo> lista_paquetes = getPackageManager().queryIntentActivities(tomar_foto_intent, PackageManager.MATCH_DEFAULT_ONLY);
+        //Para recorrer la lista
+        for (ResolveInfo resolveInfo: lista_paquetes)
+        {
+            Log.i("MIAPP", "APPS candidatas " + resolveInfo.activityInfo.packageName);
         }
     }
     @Override

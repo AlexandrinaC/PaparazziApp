@@ -61,21 +61,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         //Pongo el molde del intent, aqui, ya que lo voy a utilizar en varias partes.
-        Intent intent;
+
         String menu = menuItem.getTitle().toString();
         //Con esto, cojo cada numero de cada icono. En mi caso, el 16,17 y 18
         int npi = menuItem.getOrder();//obtengo el número del punto de interés
 
         switch (npi){
-            case 16: intent = new Intent(this, FotoRAM.class);
+            case 16: Intent intent = new Intent(this, FotoRAM.class);
             startActivity(intent);
             break;
 
-            case 17: intent = new Intent (this, FotoDisco.class);
+            case 17: intent = new Intent (this, TomarFotoDiscoActivity.class);
             startActivity(intent);
             break;
 
-            case 18: intent = new Intent(this,SeleccionarFoto.class);
+            case 18: intent = new Intent(this,SeleccionarFotoActivity.class);
             startActivity(intent);
             break;
         }
